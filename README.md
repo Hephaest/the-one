@@ -1,9 +1,9 @@
 Table of Contents
 =================
 * [The ONE](#the-one)
-* [CNSCC.365 Task 2: Development of DTN Routing Protocol](#cnscc365-task-2-development-of-dtn-routing-protocol)
-   * [Requirement 1: Utility Routing](#requirement-1-utility-routing)
-   * [Requirement 3: Queueing management for message discard](#requirement-3-queueing-management-for-message-discard)
+* [Development of DTN Routing Protocol](#development-of-dtn-routing-protocol)
+   * [Utility Routing](#utility-routing)
+   * [Queueing management](#queueing-management)
          
 # The ONE
 
@@ -15,7 +15,7 @@ For instructions on how to get started, see [the README](https://github.com/aker
 
 The [wiki page](https://github.com/akeranen/the-one/wiki) has the latest information.
 
-# CNSCC.365 Task 2: Development of DTN Routing Protocol
+# Development of DTN Routing Protocol
 For further test, `default_settings.txt` has been changed as follows. I have already added `EnergyModel settings` to simulate the real scenarios:
 
 ```java
@@ -53,7 +53,7 @@ Group6.transmitEnergy = 1.5
 Group6.scanEnergy = 1.5
 Group6.scanResponseEnergy = 1.5
 ```
-## Requirement 1: Utility Routing
+## Utility Routing
 
 This protocol combines both ***Probabilistic*** routing and ***Spray and Wait*** routing protocol to define the utility of the mobile node as a metric for next-hop selection.<br>
 
@@ -74,7 +74,7 @@ Given to simulation results, it shows a higher delivery rate with lower overhead
 <br>
 <br>
 
-## Requirement 3: Queueing management for message discard
+## Queueing management
 In the perspective of queueing management, the message with the lowest possibility for delivery will be discarded. You can easily find the corresponding algorithm to achieve intelligent drop. The core of this algorithm is to check the following factors:
 <UL>
   <LI/> The <b>relationship</b> between TTL and the destination of the message. E.g. if the message leaves with a small TTL but it still has a long way to transfer, then it should be discarded.
