@@ -52,7 +52,7 @@ Scenario.nrofHostGroups = 6
 
 # Common settings for all groups
 Group.movementModel = ShortestPathMapBasedMovement
-Group.router = EpidemicRouter
+Group.router = UtilityRouter
 Group.bufferSize = 5M
 Group.waitTime = 0, 120
 # All nodes have the bluetooth interface
@@ -65,18 +65,20 @@ Group.msgTtl = 300
 
 Group.nrofHosts = 40
 
-# group1 (pedestrians) specific settings
+# group1 - pedestrians
 Group1.groupID = p
+Group1.speed = 0.5,1
+Group1.waitTime = 0, 300
 
-# group2 specific settings
+# group2 - car
 Group2.groupID = c
 # cars can drive only on roads
 Group2.okMaps = 1
 # 10-50 km/h
 Group2.speed = 2.7, 13.9
 
-# another group of pedestrians
-Group3.groupID = w
+# group3 - students
+Group3.groupID = s
 
 # The Tram groups
 Group4.groupID = t
@@ -154,9 +156,50 @@ Report.reportDir = reports/
 Report.report1 = MessageStatsReport
 Report.report2 = ContactTimesReport
 
+## Nodes report every 20 minutes
+EnergyLevelReport.granularity = 1200
+
+## EnergyModel settings
+
+# Visitor pedestrians
+Group1.initialEnergy = 80000
+Group1.transmitEnergy = 1
+Group1.scanEnergy = 1
+Group1.scanResponseEnergy = 1
+
+# Bikers
+Group2.initialEnergy = 110000
+Group2.transmitEnergy = 1
+Group2.scanEnergy = 1
+Group2.scanResponseEnergy = 1
+
+# Student pedestrians
+Group3.initialEnergy = 100000
+Group3.transmitEnergy = 1
+Group3.scanEnergy = 1
+Group3.scanResponseEnergy = 1
+
+# The Tram groups
+Group4.initialEnergy = 200000
+Group4.transmitEnergy = 1.5
+Group4.scanEnergy = 1.5
+Group4.scanResponseEnergy = 1.5
+Group5.initialEnergy = 200000
+Group5.transmitEnergy = 1.5
+Group5.scanEnergy = 1.5
+Group5.scanResponseEnergy = 1.5
+Group6.initialEnergy = 200000
+Group6.transmitEnergy = 1.5
+Group6.scanEnergy = 1.5
+Group6.scanResponseEnergy = 1.5
+
 ## Default settings for some routers settings
 ProphetRouter.secondsInTimeUnit = 30
-SprayAndWaitRouter.nrofCopies = 6
+ProphetV2Router.secondsInTimeUnit = 30
+ProphetRouterWithEstimation.timeScale = 10000
+UtilityRouter.secondsInTimeUnit = 30
+UtilityRouter.nrofCopies = 8
+SprayAndWaitRouter.nrofCopies = 8
 SprayAndWaitRouter.binaryMode = true
 
 ## Optimization settings -- these affect the speed of the simulation
