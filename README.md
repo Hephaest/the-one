@@ -83,4 +83,4 @@ In the perspective of queueing management, the message with the lowest possibili
 
 Given to simulation results, with decreasing buffer size, it shows **higher robustness** in delivery possibility and overhead compared with the above protocols.
 
-<p align="center"><img src="https://github.com/Hephaest/the-one/blob/master/images/R2_delivery.jpg" height="280dp" /><img src="https://github.com/Hephaest/the-one/blob/master/images/R2_overhead.png" height="280dp" /></p>
+<p align="center"><img src="https://github.com/Hephaest/the-one/blob/master/images/R2_delivery.jpg" height="280dp" /><img src="https://github.com/Hephaest/the-one/blob/master/images/R2_overhead.jpg" height="280dp" /></p>
